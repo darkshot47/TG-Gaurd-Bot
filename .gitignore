@@ -1,0 +1,25 @@
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# bot runtime files
+*.session
+*.session-journal
+.env
+config.env
+
+# tests / tooling
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# os / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
