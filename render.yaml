@@ -1,0 +1,24 @@
+services:
+  - type: worker            # long-running bot, no web port needed
+    name: tg-guard-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: BOT_TOKEN          # from @BotFather
+        sync: false
+      - key: DB_CHANNEL         # private channel id, e.g. -1001234567890
+        sync: false
+      - key: OWNER_ID           # your friend's telegram user id
+        sync: false
+      - key: EXTRA_ADMINS       # optional: comma separated ids
+        sync: false
+      - key: TIMEZONE
+        value: Asia/Kolkata
+      - key: SNAPSHOT_EVERY     # seconds between DB channel saves
+        value: "240"
+      - key: LOG_USERS          # 1 = post every new user into the DB channel
+        value: "1"
